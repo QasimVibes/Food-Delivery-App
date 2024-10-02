@@ -14,6 +14,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-restaurantApp-restaurantAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-restaurantApp-restaurantAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		84A760C5D5C94EBF89414395 /* LeagueSpartan-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EF6495601114A3B9B595E42 /* LeagueSpartan-Bold.ttf */; };
+		24780C9F255E44ED8875FE1D /* LeagueSpartan-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57F233D82F734199BBC4373E /* LeagueSpartan-Light.ttf */; };
+		E710F5481EB84FACA716A21E /* LeagueSpartan-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8CF2E11EA5044D093CEED39 /* LeagueSpartan-Medium.ttf */; };
+		AD183130ECC64E6D81E71E54 /* LeagueSpartan-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BA439BD18A547039CACF15D /* LeagueSpartan-Regular.ttf */; };
+		2CC16C4D14DB4E46BB0EA763 /* LeagueSpartan-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15E2205AE42B4479B7B89B4C /* LeagueSpartan-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = restaurantApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-restaurantApp-restaurantAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-restaurantApp-restaurantAppTests.release.xcconfig"; path = "Target Support Files/Pods-restaurantApp-restaurantAppTests/Pods-restaurantApp-restaurantAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		7EF6495601114A3B9B595E42 /* LeagueSpartan-Bold.ttf */ = {isa = PBXFileReference; name = "LeagueSpartan-Bold.ttf"; path = "../src/assets/fonts/LeagueSpartan-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		57F233D82F734199BBC4373E /* LeagueSpartan-Light.ttf */ = {isa = PBXFileReference; name = "LeagueSpartan-Light.ttf"; path = "../src/assets/fonts/LeagueSpartan-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D8CF2E11EA5044D093CEED39 /* LeagueSpartan-Medium.ttf */ = {isa = PBXFileReference; name = "LeagueSpartan-Medium.ttf"; path = "../src/assets/fonts/LeagueSpartan-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7BA439BD18A547039CACF15D /* LeagueSpartan-Regular.ttf */ = {isa = PBXFileReference; name = "LeagueSpartan-Regular.ttf"; path = "../src/assets/fonts/LeagueSpartan-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		15E2205AE42B4479B7B89B4C /* LeagueSpartan-SemiBold.ttf */ = {isa = PBXFileReference; name = "LeagueSpartan-SemiBold.ttf"; path = "../src/assets/fonts/LeagueSpartan-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				E09F7D6363D2431297A54278 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +160,19 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		E09F7D6363D2431297A54278 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				7EF6495601114A3B9B595E42 /* LeagueSpartan-Bold.ttf */,
+				57F233D82F734199BBC4373E /* LeagueSpartan-Light.ttf */,
+				D8CF2E11EA5044D093CEED39 /* LeagueSpartan-Medium.ttf */,
+				7BA439BD18A547039CACF15D /* LeagueSpartan-Regular.ttf */,
+				15E2205AE42B4479B7B89B4C /* LeagueSpartan-SemiBold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +269,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				84A760C5D5C94EBF89414395 /* LeagueSpartan-Bold.ttf in Resources */,
+				24780C9F255E44ED8875FE1D /* LeagueSpartan-Light.ttf in Resources */,
+				E710F5481EB84FACA716A21E /* LeagueSpartan-Medium.ttf in Resources */,
+				AD183130ECC64E6D81E71E54 /* LeagueSpartan-Regular.ttf in Resources */,
+				2CC16C4D14DB4E46BB0EA763 /* LeagueSpartan-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

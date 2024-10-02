@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/LeagueSpartan-Bold.ttf",
+      "sha1": "6d89e29970900deb2e7ccf311b29de7e9980a14c"
+    },
+    {
+      "path": "src/assets/fonts/LeagueSpartan-Light.ttf",
+      "sha1": "a3b4e8f99f7839a3544db8911701b18b970c19cf"
+    },
+    {
+      "path": "src/assets/fonts/LeagueSpartan-Medium.ttf",
+      "sha1": "25a3b2045642fa4c93d41bdc5f1706d37aa17328"
+    },
+    {
+      "path": "src/assets/fonts/LeagueSpartan-Regular.ttf",
+      "sha1": "da5d949145fd9576e1049f3b968a64e20a090d44"
+    },
+    {
+      "path": "src/assets/fonts/LeagueSpartan-SemiBold.ttf",
+      "sha1": "33e260364f621b9f867702e65f575f06dcc25d51"
+    }
+  ]
+}
