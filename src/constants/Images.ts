@@ -10,6 +10,10 @@ import EDIT from '../assets/images/edit.png';
 import DELETE from '../assets/images/delete.png';
 import MINUS from '../assets/images/minus.png';
 import PLUS from '../assets/images/plus.png';
+import HEART from '../assets/images/heart.png';
+import STAR from '../assets/images/star.png';
+import FOOD from '../assets/images/food.png';
+import BAG from '../assets/images/bag.png';
 
 export {
   GOBACK,
@@ -24,4 +28,8 @@ export {
   DELETE,
   MINUS,
   PLUS,
+  HEART,
+  STAR,
+  FOOD,
+  BAG,
 };

@@ -11,6 +11,7 @@ import OrderCancel from './src/screens/orderCancel/OrderCancel';
 import OrderCancelled from './src/screens/orderCancel/OrderCancelled';
 import OrderConfirmed from './src/screens/placeOrder/OrderConfirmed';
 import PlaceOrder from './src/screens/placeOrder/PlaceOrder';
+import Details from './src/screens/details/Details';
 
 function App(): React.JSX.Element {
   return (
@@ -26,6 +27,7 @@ function App(): React.JSX.Element {
       {/* <OrderCancelled /> */}
       {/* <OrderConfirmed /> */}
       {/* <PlaceOrder /> */}
+      <Details />
     </>
   );
 }
