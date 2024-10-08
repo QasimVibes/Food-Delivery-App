@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Text, View} from 'react-native';
 import Login from './src/screens/login/Login';
 import Signup from './src/screens/signup/Signup';
@@ -12,8 +12,12 @@ import OrderCancelled from './src/screens/orderCancel/OrderCancelled';
 import OrderConfirmed from './src/screens/placeOrder/OrderConfirmed';
 import PlaceOrder from './src/screens/placeOrder/PlaceOrder';
 import Details from './src/screens/details/Details';
+import SplashScreen from 'react-native-splash-screen';
 
 function App(): React.JSX.Element {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <>
       {/* <Login /> */}
