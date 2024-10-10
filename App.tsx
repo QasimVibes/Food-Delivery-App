@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import Login from './src/screens/login/Login';
 import Signup from './src/screens/signup/Signup';
 import ResetPassword from './src/screens/resetPassword/ResetPassword';
@@ -13,6 +13,9 @@ import OrderConfirmed from './src/screens/placeOrder/OrderConfirmed';
 import PlaceOrder from './src/screens/placeOrder/PlaceOrder';
 import Details from './src/screens/details/Details';
 import SplashScreen from 'react-native-splash-screen';
+import Onboarding from 'react-native-onboarding-swiper';
+import {ApolloProvider} from '@apollo/client';
+import client from './src/graphql/client';
 
 function App(): React.JSX.Element {
   useEffect(() => {
@@ -20,19 +23,22 @@ function App(): React.JSX.Element {
   }, []);
   return (
     <>
-      {/* <Login /> */}
-      {/* <Signup /> */}
-      {/* <ResetPassword /> */}
-      {/* <ForgotPassword /> */}
-      {/* <Profile /> */}
-      {/* <DeliveryAdress /> */}
-      {/* <Orders /> */}
-      {/* <OrderCancel /> */}
-      {/* <OrderCancelled /> */}
-      {/* <OrderConfirmed /> */}
-      {/* <PlaceOrder /> */}
-      <Details />
+      <ApolloProvider client={client}>
+        {/* <Login /> */}
+        {/* <Signup /> */}
+        {/* <ResetPassword /> */}
+        {/* <ForgotPassword /> */}
+        {/* <Profile /> */}
+        {/* <DeliveryAdress /> */}
+        {/* <Orders /> */}
+        {/* <OrderCancel /> */}
+        {/* <OrderCancelled /> */}
+        {/* <OrderConfirmed /> */}
+        {/* <PlaceOrder /> */}
+        <Details />
+      </ApolloProvider>
     </>
   );
 }
+
 export default App;

@@ -1,12 +1,12 @@
 import {Image, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {GOBACK} from '../../constants/Images';
+import {GO_BACK} from '../../constants/Images';
 import styles from './GoBackStyles';
 
 const GoBack = () => {
   return (
     <TouchableOpacity>
-      <Image source={GOBACK} resizeMode="contain" style={styles.imageStyle} />
+      <Image source={GO_BACK} resizeMode="contain" style={styles.imageStyle} />
     </TouchableOpacity>
   );
 };
