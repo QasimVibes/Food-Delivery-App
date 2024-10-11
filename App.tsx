@@ -16,6 +16,9 @@ import SplashScreen from 'react-native-splash-screen';
 import Onboarding from 'react-native-onboarding-swiper';
 import {ApolloProvider} from '@apollo/client';
 import client from './src/graphql/client';
+import {Provider} from 'react-redux';
+import store from './src/store/store';
+import Toast from 'react-native-toast-message';
 
 function App(): React.JSX.Element {
   useEffect(() => {
@@ -23,20 +26,23 @@ function App(): React.JSX.Element {
   }, []);
   return (
     <>
-      <ApolloProvider client={client}>
-        {/* <Login /> */}
-        <Signup />
-        {/* <ResetPassword /> */}
-        {/* <ForgotPassword /> */}
-        {/* <Profile /> */}
-        {/* <DeliveryAdress /> */}
-        {/* <Orders /> */}
-        {/* <OrderCancel /> */}
-        {/* <OrderCancelled /> */}
-        {/* <OrderConfirmed /> */}
-        {/* <PlaceOrder /> */}
-        {/* <Details /> */}
-      </ApolloProvider>
+      <Provider store={store}>
+        <ApolloProvider client={client}>
+          {/* <Login /> */}
+          <Signup />
+          {/* <ResetPassword /> */}
+          {/* <ForgotPassword /> */}
+          {/* <Profile /> */}
+          {/* <DeliveryAdress /> */}
+          {/* <Orders /> */}
+          {/* <OrderCancel /> */}
+          {/* <OrderCancelled /> */}
+          {/* <OrderConfirmed /> */}
+          {/* <PlaceOrder /> */}
+          {/* <Details /> */}
+        </ApolloProvider>
+        <Toast />
+      </Provider>
     </>
   );
 }

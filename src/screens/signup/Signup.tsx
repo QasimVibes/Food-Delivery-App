@@ -7,9 +7,13 @@ import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
 import SignupOptions from '../../components/signupOptions/SignupOptions';
 import {useSignup} from './useSignup';
+import {SIGNUP_FIELDS} from '../../constants/InputFields';
+import Loading from '../../components/loading/Loading';
 
 const Signup = () => {
-  const {data, handleChange} = useSignup();
+  const {data, handleChange, handleSubmit, user} = useSignup();
+  const inputFields = SIGNUP_FIELDS(data);
+
   return (
     <View style={styles.container}>
       <Header title="New Account" />
@@ -17,39 +21,17 @@ const Signup = () => {
         contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false}>
         <Container>
-          <Input
-            placeholder="John Doe"
-            text="Full name"
-            value={data.name}
-            onChangeText={(value: string) => handleChange('name', value)}
-          />
-          <Input
-            placeholder="********"
-            text="Password"
-            secureTextEntry={true}
-            value={data.password}
-            onChangeText={(value: string) => handleChange('password', value)}
-          />
-          <Input
-            placeholder="example@example.com"
-            text="Email"
-            value={data.email}
-            onChangeText={(value: string) => handleChange('email', value)}
-          />
-          <Input
-            placeholder="+91 9876543210"
-            text="Mobile Number"
-            value={data.mobile}
-            onChangeText={(value: string) => handleChange('mobile', value)}
-          />
-          <Input
-            placeholder="DD/MM/YYYY"
-            text="Date of Birth"
-            isDatePicker={true}
-            value={data.dob}
-            onChangeText={(value: string) => handleChange('dob', value)}
-          />
-
+          {inputFields?.map(field => (
+            <Input
+              key={field?.key}
+              placeholder={field?.placeholder}
+              text={field?.text}
+              value={field?.value}
+              secureTextEntry={field?.secureTextEntry}
+              isDatePicker={field?.isDatePicker}
+              onChangeText={(value: string) => handleChange(field?.key, value)}
+            />
+          ))}
           <View>
             <Text style={styles.termsText}>
               By continuing, you agree to{'\n'}
@@ -58,7 +40,7 @@ const Signup = () => {
             </Text>
           </View>
           <View style={styles.buttonContainer}>
-            <Button text="Sign Up" />
+            <Button text="Sign Up" onPress={handleSubmit} />
           </View>
           <View style={styles.signUpContainer}>
             <Text style={styles.signUpText}>or sign up with</Text>
@@ -72,6 +54,7 @@ const Signup = () => {
           </View>
         </Container>
       </ScrollView>
+      <Loading visible={user?.status === 'loading'} />
     </View>
   );
 };

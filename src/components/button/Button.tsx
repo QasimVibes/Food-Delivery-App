@@ -7,14 +7,18 @@ const Button = ({
   paddingVertical = 14,
   fontSize = 22,
   width = 200,
+  onPress,
 }: {
   text: string;
   paddingVertical?: number;
   fontSize?: number;
   width?: number;
+  onPress?: () => void;
 }) => {
   return (
-    <TouchableOpacity style={[styles.button, {paddingVertical}, {width}]}>
+    <TouchableOpacity
+      style={[styles.button, {paddingVertical}, {width}]}
+      onPress={onPress}>
       <Text style={[styles.buttonText, {fontSize}]}>{text}</Text>
     </TouchableOpacity>
   );
