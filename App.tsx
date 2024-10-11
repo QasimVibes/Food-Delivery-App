@@ -25,7 +25,7 @@ function App(): React.JSX.Element {
     <>
       <ApolloProvider client={client}>
         {/* <Login /> */}
-        {/* <Signup /> */}
+        <Signup />
         {/* <ResetPassword /> */}
         {/* <ForgotPassword /> */}
         {/* <Profile /> */}
@@ -35,7 +35,7 @@ function App(): React.JSX.Element {
         {/* <OrderCancelled /> */}
         {/* <OrderConfirmed /> */}
         {/* <PlaceOrder /> */}
-        <Details />
+        {/* <Details /> */}
       </ApolloProvider>
     </>
   );

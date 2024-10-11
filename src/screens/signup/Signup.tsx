@@ -6,8 +6,10 @@ import Container from '../../components/container/Container';
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
 import SignupOptions from '../../components/signupOptions/SignupOptions';
+import {useSignup} from './useSignup';
 
 const Signup = () => {
+  const {data, handleChange} = useSignup();
   return (
     <View style={styles.container}>
       <Header title="New Account" />
@@ -15,15 +17,39 @@ const Signup = () => {
         contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false}>
         <Container>
-          <Input placeholder="John Doe" text="Full name" />
+          <Input
+            placeholder="John Doe"
+            text="Full name"
+            value={data.name}
+            onChangeText={(value: string) => handleChange('name', value)}
+          />
           <Input
             placeholder="********"
             text="Password"
             secureTextEntry={true}
+            value={data.password}
+            onChangeText={(value: string) => handleChange('password', value)}
           />
-          <Input placeholder="example@example.com" text="Email" />
-          <Input placeholder="+91 9876543210" text="Mobile Number" />
-          <Input placeholder="DD/MM/YYYY" text="Date of Birth" />
+          <Input
+            placeholder="example@example.com"
+            text="Email"
+            value={data.email}
+            onChangeText={(value: string) => handleChange('email', value)}
+          />
+          <Input
+            placeholder="+91 9876543210"
+            text="Mobile Number"
+            value={data.mobile}
+            onChangeText={(value: string) => handleChange('mobile', value)}
+          />
+          <Input
+            placeholder="DD/MM/YYYY"
+            text="Date of Birth"
+            isDatePicker={true}
+            value={data.dob}
+            onChangeText={(value: string) => handleChange('dob', value)}
+          />
+
           <View>
             <Text style={styles.termsText}>
               By continuing, you agree to{'\n'}
