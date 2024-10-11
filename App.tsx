@@ -28,8 +28,8 @@ function App(): React.JSX.Element {
     <>
       <Provider store={store}>
         <ApolloProvider client={client}>
-          {/* <Login /> */}
-          <Signup />
+          <Login />
+          {/* <Signup /> */}
           {/* <ResetPassword /> */}
           {/* <ForgotPassword /> */}
           {/* <Profile /> */}

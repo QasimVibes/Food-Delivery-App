@@ -35,3 +35,9 @@ export const SIGNUP_USER = gql`
     }
   }
 `;
+
+export const LOGIN_USER = gql`
+  mutation LoginUser($identifier: String!, $password: String!) {
+    login(identifier: $identifier, password: $password)
+  }
+`;

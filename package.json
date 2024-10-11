@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.11.8",
+    "@react-native-async-storage/async-storage": "^2.0.0",
     "@react-native-community/datetimepicker": "^8.2.0",
     "@reduxjs/toolkit": "^2.2.8",
     "graphql": "^16.9.0",

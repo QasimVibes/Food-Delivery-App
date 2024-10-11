@@ -14,7 +14,12 @@ export type SignUpUserInput = {
 };
 
 export type AuthState = {
-  user: SignUpUserInput | null;
+  user: User | null;
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
+};
+
+export type LoginUserInput = {
+  identifier: string;
+  password: string;
 };

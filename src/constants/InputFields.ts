@@ -1,4 +1,4 @@
-import {SignUpUserInput} from '../types/types';
+import {LoginUserInput, SignUpUserInput} from '../types/types';
 
 export const SIGNUP_FIELDS = (data: SignUpUserInput) => {
   const inputFields = [
@@ -36,6 +36,26 @@ export const SIGNUP_FIELDS = (data: SignUpUserInput) => {
       value: data.dateOfBirth,
       key: 'dateOfBirth',
       isDatePicker: true,
+    },
+  ];
+  return inputFields;
+};
+
+export const LOGIN_FIELDS = (data: LoginUserInput) => {
+  const inputFields = [
+    {
+      placeholder: 'example@example.com',
+      text: 'Email or Mobile Number',
+      value: data?.identifier,
+      key: 'identifier',
+      secureTextEntry: false,
+    },
+    {
+      placeholder: '********',
+      text: 'Password',
+      value: data?.password,
+      key: 'password',
+      secureTextEntry: true,
     },
   ];
   return inputFields;

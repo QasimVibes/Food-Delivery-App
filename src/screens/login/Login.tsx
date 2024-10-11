@@ -6,8 +6,13 @@ import Container from '../../components/container/Container';
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
 import SignupOptions from '../../components/signupOptions/SignupOptions';
+import {useLogin} from './useLogin';
+import {LOGIN_FIELDS} from '../../constants/InputFields';
+import Loading from '../../components/loading/Loading';
 
 const Login = () => {
+  const {data, handleChange, handleSubmit, user} = useLogin();
+  const inputFields = LOGIN_FIELDS(data);
   return (
     <View style={styles.container}>
       <Header title="Login" />
@@ -22,25 +27,26 @@ const Login = () => {
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Text>
           </View>
-
           <View style={styles.inputContainer}>
-            <Input
-              placeholder="Email or Mobile Number"
-              text="example@example.com"
-            />
-            <Input
-              placeholder="********"
-              text="Password"
-              secureTextEntry={true}
-            />
-
+            {inputFields?.map(field => (
+              <Input
+                key={field?.key}
+                placeholder={field?.placeholder}
+                text={field?.text}
+                value={field?.value}
+                secureTextEntry={field?.secureTextEntry}
+                onChangeText={(value: string) =>
+                  handleChange(field?.key, value)
+                }
+              />
+            ))}
             <TouchableOpacity style={styles.forgotPassword}>
               <Text style={styles.forgotPasswordText}>Forgot Password</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.buttonContainer}>
-            <Button text="Login" />
+            <Button text="Login" onPress={handleSubmit} />
           </View>
 
           <View style={styles.signUpContainer}>
@@ -55,6 +61,7 @@ const Login = () => {
           </View>
         </Container>
       </ScrollView>
+      <Loading visible={user?.status === 'loading'} />
     </View>
   );
 };

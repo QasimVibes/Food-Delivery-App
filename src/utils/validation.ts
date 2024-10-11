@@ -1,4 +1,4 @@
-import {SignUpUserInput} from '../types/types';
+import {SignUpUserInput, LoginUserInput} from '../types/types';
 
 export const validateSignUpData = (data: SignUpUserInput) => {
   const errors: {[key: string]: string} = {};
@@ -31,6 +31,27 @@ export const validateSignUpData = (data: SignUpUserInput) => {
 
   if (!data.dateOfBirth) {
     errors.dateOfBirth = 'Date of birth is required';
+  }
+
+  return errors;
+};
+
+export const validateLoginData = (data: LoginUserInput) => {
+  const errors: {[key: string]: string} = {};
+
+  const identifier = data.identifier?.trim() || '';
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[0-9]{10,}$/;
+
+  if (!identifier) {
+    errors.identifier = 'Email or phone number is required';
+  } else if (!emailRegex.test(identifier) && !phoneRegex.test(identifier)) {
+    errors.identifier = 'Invalid email or phone number';
+  }
+
+  if (data.password.length < 6) {
+    errors.password = 'Password must be at least 6 characters long';
   }
 
   return errors;

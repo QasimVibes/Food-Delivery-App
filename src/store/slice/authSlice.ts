@@ -1,7 +1,7 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
-import {SIGNUP_USER} from '../../graphql/queries/queries';
+import {LOGIN_USER, SIGNUP_USER} from '../../graphql/queries/queries';
 import client from '../../graphql/client';
-import {AuthState, SignUpUserInput} from '../../types/types';
+import {AuthState, LoginUserInput, SignUpUserInput} from '../../types/types';
 
 const initialState: AuthState = {
   user: null,
@@ -24,6 +24,21 @@ export const signup = createAsyncThunk(
   },
 );
 
+export const login = createAsyncThunk(
+  'auth/login',
+  async (loginInput: LoginUserInput, {rejectWithValue}) => {
+    try {
+      const response = await client.mutate({
+        mutation: LOGIN_USER,
+        variables: loginInput,
+      });
+      return response.data.login;
+    } catch (error: any) {
+      return rejectWithValue(error.message || 'Login failed');
+    }
+  },
+);
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -39,6 +54,18 @@ const authSlice = createSlice({
         state.user = action.payload;
       })
       .addCase(signup.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload as string;
+      })
+      .addCase(login.pending, state => {
+        state.status = 'loading';
+        state.error = null;
+      })
+      .addCase(login.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.user = action.payload;
+      })
+      .addCase(login.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload as string;
       });
