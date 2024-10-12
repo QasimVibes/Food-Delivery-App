@@ -28,3 +28,14 @@ export type ChangePasswordInput = {
   newPassword: string;
   confirmPassword: string;
 };
+
+export type VerifyOtp = {
+  otp: string;
+  email: string;
+};
+
+export type ChangePassword = {
+  email: string;
+  otp: string;
+  password: string;
+};

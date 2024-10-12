@@ -7,12 +7,12 @@ import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
 import {CHANGE_PASSWORD_FIELDS} from '../../constants/InputFields';
 import {COLORS} from '../../constants/Colors';
+import {useChangePassword} from './useChangePassword';
+import Loading from '../../components/loading/Loading';
 
 const ChangePassword = () => {
-  const inputFields = CHANGE_PASSWORD_FIELDS({
-    confirmPassword: '',
-    newPassword: '',
-  });
+  const {password, handleChange, handleSubmit, user} = useChangePassword();
+  const inputFields = CHANGE_PASSWORD_FIELDS(password);
   return (
     <View style={styles.container}>
       <Header title="Set Password" />
@@ -32,6 +32,7 @@ const ChangePassword = () => {
               value={field?.value}
               placeholderTextColor={COLORS.lightBlack}
               secureTextEntry={field?.secureTextEntry}
+              onChangeText={(value: string) => handleChange(field?.key, value)}
             />
           ))}
           <View style={styles.buttonContainer}>
@@ -40,10 +41,12 @@ const ChangePassword = () => {
               paddingVertical={8}
               fontSize={17}
               width={250}
+              onPress={handleSubmit}
             />
           </View>
         </Container>
       </ScrollView>
+      <Loading visible={user?.status === 'loading'} />
     </View>
   );
 };

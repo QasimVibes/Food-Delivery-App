@@ -6,8 +6,11 @@ import Header from '../../components/header/Header';
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
 import {COLORS} from '../../constants/Colors';
+import {useForgotPassword} from './useForgotPassword';
+import Loading from '../../components/loading/Loading';
 
 const ForgotPassword = () => {
+  const {email, handleChange, handleSubmit, user} = useForgotPassword();
   return (
     <View style={styles.container}>
       <Header title="Forgot Password" />
@@ -22,6 +25,8 @@ const ForgotPassword = () => {
           <Input
             placeholder="Enter Email"
             text="Email"
+            value={email}
+            onChangeText={handleChange}
             keyboardType="email-address"
             placeholderTextColor={COLORS.lightBlack}
           />
@@ -31,10 +36,12 @@ const ForgotPassword = () => {
               paddingVertical={8}
               fontSize={17}
               width={250}
+              onPress={handleSubmit}
             />
           </View>
         </Container>
       </ScrollView>
+      <Loading visible={user?.status === 'loading'} />
     </View>
   );
 };

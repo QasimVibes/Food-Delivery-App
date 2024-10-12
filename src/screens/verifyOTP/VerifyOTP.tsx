@@ -1,14 +1,16 @@
 import {View, Text, ScrollView, TextInput} from 'react-native';
 import React from 'react';
-import styles from './VerifyOTPStyles';
+import styles from './VerifyOtpStyles';
 import Container from '../../components/container/Container';
 import Button from '../../components/button/Button';
 import Header from '../../components/header/Header';
 import {COLORS} from '../../constants/Colors';
-import {useVerifyOTP} from './useVerifyOTP';
+import {useVerifyOtp} from './useVerifyOtp';
+import Loading from '../../components/loading/Loading';
 
-export default function VerifyOTP() {
-  const {otp, handleOtpChange, handleKeyPress, inputRefs} = useVerifyOTP();
+export default function VerifyOtp() {
+  const {otp, handleOtpChange, handleKeyPress, inputRefs, handleSubmit, user} =
+    useVerifyOtp();
   return (
     <View style={styles.container}>
       <Header title="Verify OTP" />
@@ -42,10 +44,12 @@ export default function VerifyOTP() {
               paddingVertical={8}
               fontSize={17}
               width={250}
+              onPress={handleSubmit}
             />
           </View>
         </Container>
       </ScrollView>
+      <Loading visible={user?.status === 'loading'} />
     </View>
   );
 }

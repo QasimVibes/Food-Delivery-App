@@ -19,7 +19,7 @@ import client from './src/graphql/client';
 import {Provider} from 'react-redux';
 import store from './src/store/store';
 import Toast from 'react-native-toast-message';
-import VerifyOTP from './src/screens/verifyOTP/VerifyOTP';
+import VerifyOtp from './src/screens/verifyOtp/VerifyOtp';
 import ChangePassword from './src/screens/changePassword/ChangePassword';
 
 function App(): React.JSX.Element {
@@ -34,7 +34,7 @@ function App(): React.JSX.Element {
           {/* <Signup /> */}
           {/* <ResetPassword /> */}
           {/* <ForgotPassword /> */}
-          {/* <VerifyOTP /> */}
+          {/* <VerifyOtp /> */}
           <ChangePassword />
           {/* <Profile /> */}
           {/* <DeliveryAdress /> */}

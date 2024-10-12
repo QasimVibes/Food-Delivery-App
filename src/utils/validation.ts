@@ -1,4 +1,8 @@
-import {SignUpUserInput, LoginUserInput} from '../types/types';
+import {
+  SignUpUserInput,
+  LoginUserInput,
+  ChangePasswordInput,
+} from '../types/types';
 
 export const validateSignUpData = (data: SignUpUserInput) => {
   const errors: {[key: string]: string} = {};
@@ -54,5 +58,42 @@ export const validateLoginData = (data: LoginUserInput) => {
     errors.password = 'Password must be at least 6 characters long';
   }
 
+  return errors;
+};
+
+export const validateForgotPassword = (email: string) => {
+  const errors: {[key: string]: string} = {};
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!email) {
+    errors.email = 'Email is required';
+  } else if (!emailRegex.test(email)) {
+    errors.email = 'Invalid email address';
+  }
+
+  return errors;
+};
+
+export const validateOtp = (otp: string) => {
+  const errors: {[key: string]: string} = {};
+
+  if (!otp) {
+    errors.otp = 'OTP is required';
+  } else if (otp.length !== 4) {
+    errors.otp = 'Invalid OTP. It must be 4 digits';
+  }
+
+  return errors;
+};
+
+export const validateChangePassword = (data: ChangePasswordInput) => {
+  const errors: {[key: string]: string} = {};
+
+  if (data.newPassword.length < 6 || data.confirmPassword.length < 6) {
+    errors.newPassword = 'Password must be at least 6 characters long';
+  } else if (data.newPassword !== data.confirmPassword) {
+    errors.confirmPassword = 'Passwords do not match';
+  }
   return errors;
 };

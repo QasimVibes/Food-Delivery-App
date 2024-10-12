@@ -41,3 +41,21 @@ export const LOGIN_USER = gql`
     login(identifier: $identifier, password: $password)
   }
 `;
+
+export const FORGOT_PASSWORD = gql`
+  mutation ForgotPassword($email: String!) {
+    forgotPassword(email: $email)
+  }
+`;
+
+export const VERIFY_OTP = gql`
+  mutation VerifyOtp($email: String!, $otp: String!) {
+    verifyOtp(email: $email, otp: $otp)
+  }
+`;
+
+export const CHANGE_PASSWORD = gql`
+  mutation ChangePassword($email: String!, $otp: String!, $password: String!) {
+    changePassword(email: $email, otp: $otp, password: $password)
+  }
+`;
