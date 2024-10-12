@@ -39,3 +39,9 @@ export type ChangePassword = {
   otp: string;
   password: string;
 };
+
+export type ResetPasswordInput = {
+  oldPassword: string;
+  newPassword: string;
+  confirmPassword: string;
+};

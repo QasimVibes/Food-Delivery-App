@@ -2,6 +2,7 @@ import {
   SignUpUserInput,
   LoginUserInput,
   ChangePasswordInput,
+  ResetPasswordInput,
 } from '../types/types';
 
 export const validateSignUpData = (data: SignUpUserInput) => {
@@ -26,7 +27,7 @@ export const validateSignUpData = (data: SignUpUserInput) => {
   }
 
   const mobileNumber = data.mobileNumber?.trim() || '';
-  const mobileNumberRegex = /^[0-9]{10}$/;
+  const mobileNumberRegex = /^[0-9]{10,}$/;
   if (!mobileNumber) {
     errors.mobileNumber = 'Mobile number is required';
   } else if (!mobileNumberRegex.test(mobileNumber)) {
@@ -95,5 +96,32 @@ export const validateChangePassword = (data: ChangePasswordInput) => {
   } else if (data.newPassword !== data.confirmPassword) {
     errors.confirmPassword = 'Passwords do not match';
   }
+  return errors;
+};
+
+export const validateResetPasswordData = (data: ResetPasswordInput) => {
+  const errors: {[key: string]: string} = {};
+  if (!data.oldPassword || !data.newPassword || !data.confirmPassword) {
+    errors.emptyFields = 'All password fields are required';
+    return errors;
+  }
+  if (data.oldPassword.length < 6) {
+    errors.oldPassword = 'Password must be at least 6 characters long';
+  }
+  if (data.newPassword.length < 6) {
+    errors.newPassword = 'Password must be at least 6 characters long';
+  }
+
+  if (data.confirmPassword.length < 6) {
+    errors.confirmPassword = 'Password must be at least 6 characters long';
+  }
+  if (data.newPassword !== data.confirmPassword) {
+    errors.confirmPassword = 'Passwords do not match';
+  }
+  if (data.newPassword === data.oldPassword) {
+    errors.newPassword = 'New password must be different from the old one';
+    errors.confirmPassword = 'New password must be different from the old one';
+  }
+
   return errors;
 };

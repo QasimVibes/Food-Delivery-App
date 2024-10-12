@@ -3,6 +3,7 @@ import {
   CHANGE_PASSWORD,
   FORGOT_PASSWORD,
   LOGIN_USER,
+  RESET_PASSWORD,
   SIGNUP_USER,
   VERIFY_OTP,
 } from '../../graphql/queries/queries';
@@ -61,7 +62,7 @@ export const forgotPassword = createAsyncThunk(
       });
       return response.data.forgotPassword;
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Login failed');
+      return rejectWithValue(error.message || 'Forgot password failed');
     }
   },
 );
@@ -76,7 +77,7 @@ export const verifyOtp = createAsyncThunk(
       });
       return response.data.verifyOtp;
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Login failed');
+      return rejectWithValue(error.message || 'Verify otp failed');
     }
   },
 );
@@ -91,7 +92,22 @@ export const changePassword = createAsyncThunk(
       });
       return response.data.changePassword;
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Login failed');
+      return rejectWithValue(error.message || 'Change password failed');
+    }
+  },
+);
+
+export const resetPassword = createAsyncThunk(
+  'auth/resetPassword',
+  async ({password}: {password: string}, {rejectWithValue}) => {
+    try {
+      const response = await client.mutate({
+        mutation: RESET_PASSWORD,
+        variables: {password},
+      });
+      return response.data.resetPassword;
+    } catch (error: any) {
+      return rejectWithValue(error.message || 'Reset password failed');
     }
   },
 );
@@ -159,6 +175,18 @@ const authSlice = createSlice({
         state.user = action.payload;
       })
       .addCase(changePassword.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload as string;
+      })
+      .addCase(resetPassword.pending, state => {
+        state.status = 'loading';
+        state.error = null;
+      })
+      .addCase(resetPassword.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.user = action.payload;
+      })
+      .addCase(resetPassword.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload as string;
       });

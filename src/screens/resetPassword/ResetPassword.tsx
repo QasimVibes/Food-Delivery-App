@@ -5,8 +5,17 @@ import Container from '../../components/container/Container';
 import styles from './ResetPasswordStyles';
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
+import {CHANGE_PASSWORD_FIELDS} from '../../constants/InputFields';
+import {COLORS} from '../../constants/Colors';
+import {useResetPassword} from './useResetPassword';
+import Loading from '../../components/loading/Loading';
 
 const ResetPassword = () => {
+  const {password, handleChange, handleSubmit, user} = useResetPassword();
+  const inputFields = CHANGE_PASSWORD_FIELDS({
+    newPassword: password.newPassword,
+    confirmPassword: password.confirmPassword,
+  });
   return (
     <View style={styles.container}>
       <Header title="Password Setting" />
@@ -18,30 +27,36 @@ const ResetPassword = () => {
             placeholder="********"
             text="Current Password"
             secureTextEntry={true}
+            value={password.oldPassword}
+            placeholderTextColor={COLORS.lightBlack}
+            onChangeText={(value: string) => handleChange('oldPassword', value)}
           />
           <TouchableOpacity style={styles.forgotPassword}>
             <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
           </TouchableOpacity>
-          <Input
-            placeholder="********"
-            text="New Password"
-            secureTextEntry={true}
-          />
-          <Input
-            placeholder="********"
-            text="Confirm New Password"
-            secureTextEntry={true}
-          />
+          {inputFields?.map(field => (
+            <Input
+              key={field?.key}
+              placeholder={field?.placeholder}
+              text={field?.text}
+              value={field?.value}
+              placeholderTextColor={COLORS.lightBlack}
+              secureTextEntry={field?.secureTextEntry}
+              onChangeText={(value: string) => handleChange(field?.key, value)}
+            />
+          ))}
           <View style={styles.buttonContainer}>
             <Button
               text="Change Password"
               paddingVertical={8}
               fontSize={17}
               width={200}
+              onPress={handleSubmit}
             />
           </View>
         </Container>
       </ScrollView>
+      <Loading visible={user?.status === 'loading'} />
     </View>
   );
 };

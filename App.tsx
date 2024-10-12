@@ -32,10 +32,10 @@ function App(): React.JSX.Element {
         <ApolloProvider client={client}>
           {/* <Login /> */}
           {/* <Signup /> */}
-          {/* <ResetPassword /> */}
+          <ResetPassword />
           {/* <ForgotPassword /> */}
           {/* <VerifyOtp /> */}
-          <ChangePassword />
+          {/* <ChangePassword /> */}
           {/* <Profile /> */}
           {/* <DeliveryAdress /> */}
           {/* <Orders /> */}
