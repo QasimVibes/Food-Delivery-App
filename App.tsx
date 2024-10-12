@@ -19,6 +19,8 @@ import client from './src/graphql/client';
 import {Provider} from 'react-redux';
 import store from './src/store/store';
 import Toast from 'react-native-toast-message';
+import VerifyOTP from './src/screens/verifyOTP/VerifyOTP';
+import ChangePassword from './src/screens/changePassword/ChangePassword';
 
 function App(): React.JSX.Element {
   useEffect(() => {
@@ -28,10 +30,12 @@ function App(): React.JSX.Element {
     <>
       <Provider store={store}>
         <ApolloProvider client={client}>
-          <Login />
+          {/* <Login /> */}
           {/* <Signup /> */}
           {/* <ResetPassword /> */}
           {/* <ForgotPassword /> */}
+          {/* <VerifyOTP /> */}
+          <ChangePassword />
           {/* <Profile /> */}
           {/* <DeliveryAdress /> */}
           {/* <Orders /> */}

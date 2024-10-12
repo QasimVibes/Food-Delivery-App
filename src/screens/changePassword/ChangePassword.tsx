@@ -1,16 +1,21 @@
 import {View, Text, ScrollView} from 'react-native';
 import React from 'react';
 import Container from '../../components/container/Container';
-import styles from './ForgotPasswordStyles';
+import styles from './ChangePasswordStyles';
 import Header from '../../components/header/Header';
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
+import {CHANGE_PASSWORD_FIELDS} from '../../constants/InputFields';
 import {COLORS} from '../../constants/Colors';
 
-const ForgotPassword = () => {
+const ChangePassword = () => {
+  const inputFields = CHANGE_PASSWORD_FIELDS({
+    confirmPassword: '',
+    newPassword: '',
+  });
   return (
     <View style={styles.container}>
-      <Header title="Forgot Password" />
+      <Header title="Set Password" />
       <ScrollView
         contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false}>
@@ -19,15 +24,19 @@ const ForgotPassword = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
           </Text>
-          <Input
-            placeholder="Enter Email"
-            text="Email"
-            keyboardType="email-address"
-            placeholderTextColor={COLORS.lightBlack}
-          />
+          {inputFields?.map(field => (
+            <Input
+              key={field?.key}
+              placeholder={field?.placeholder}
+              text={field?.text}
+              value={field?.value}
+              placeholderTextColor={COLORS.lightBlack}
+              secureTextEntry={field?.secureTextEntry}
+            />
+          ))}
           <View style={styles.buttonContainer}>
             <Button
-              text="Send OTP"
+              text="Create New Password"
               paddingVertical={8}
               fontSize={17}
               width={250}
@@ -39,4 +48,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default ChangePassword;

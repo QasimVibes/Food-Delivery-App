@@ -9,6 +9,7 @@ import SignupOptions from '../../components/signupOptions/SignupOptions';
 import {useSignup} from './useSignup';
 import {SIGNUP_FIELDS} from '../../constants/InputFields';
 import Loading from '../../components/loading/Loading';
+import {COLORS} from '../../constants/Colors';
 
 const Signup = () => {
   const {data, handleChange, handleSubmit, user} = useSignup();
@@ -29,6 +30,8 @@ const Signup = () => {
               value={field?.value}
               secureTextEntry={field?.secureTextEntry}
               isDatePicker={field?.isDatePicker}
+              keyboardType={field?.keyboardType}
+              placeholderTextColor={COLORS.lightBlack}
               onChangeText={(value: string) => handleChange(field?.key, value)}
             />
           ))}

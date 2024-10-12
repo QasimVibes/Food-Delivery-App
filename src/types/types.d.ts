@@ -23,3 +23,8 @@ export type LoginUserInput = {
   identifier: string;
   password: string;
 };
+
+export type ChangePasswordInput = {
+  newPassword: string;
+  confirmPassword: string;
+};

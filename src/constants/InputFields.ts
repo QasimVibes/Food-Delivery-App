@@ -1,4 +1,8 @@
-import {LoginUserInput, SignUpUserInput} from '../types/types';
+import {
+  ChangePasswordInput,
+  LoginUserInput,
+  SignUpUserInput,
+} from '../types/types';
 
 export const SIGNUP_FIELDS = (data: SignUpUserInput) => {
   const inputFields = [
@@ -22,6 +26,7 @@ export const SIGNUP_FIELDS = (data: SignUpUserInput) => {
       value: data.email,
       key: 'email',
       secureTextEntry: false,
+      keyboardType: 'email-address',
     },
     {
       placeholder: '+91 9876543210',
@@ -29,6 +34,7 @@ export const SIGNUP_FIELDS = (data: SignUpUserInput) => {
       value: data.mobileNumber,
       key: 'mobileNumber',
       secureTextEntry: false,
+      keyboardType: 'phone-pad',
     },
     {
       placeholder: 'DD/MM/YYYY',
@@ -49,12 +55,33 @@ export const LOGIN_FIELDS = (data: LoginUserInput) => {
       value: data?.identifier,
       key: 'identifier',
       secureTextEntry: false,
+      keyboardType: 'email-address',
     },
     {
       placeholder: '********',
       text: 'Password',
       value: data?.password,
       key: 'password',
+      secureTextEntry: true,
+    },
+  ];
+  return inputFields;
+};
+
+export const CHANGE_PASSWORD_FIELDS = (data: ChangePasswordInput) => {
+  const inputFields = [
+    {
+      placeholder: '********',
+      text: 'New Password',
+      value: data?.newPassword,
+      key: 'newPassword',
+      secureTextEntry: true,
+    },
+    {
+      placeholder: '********',
+      text: 'Confirm Password',
+      value: data?.confirmPassword,
+      key: 'confirmPassword',
       secureTextEntry: true,
     },
   ];

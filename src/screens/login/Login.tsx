@@ -9,6 +9,7 @@ import SignupOptions from '../../components/signupOptions/SignupOptions';
 import {useLogin} from './useLogin';
 import {LOGIN_FIELDS} from '../../constants/InputFields';
 import Loading from '../../components/loading/Loading';
+import {COLORS} from '../../constants/Colors';
 
 const Login = () => {
   const {data, handleChange, handleSubmit, user} = useLogin();
@@ -35,6 +36,8 @@ const Login = () => {
                 text={field?.text}
                 value={field?.value}
                 secureTextEntry={field?.secureTextEntry}
+                keyboardType={field?.keyboardType}
+                placeholderTextColor={COLORS.lightBlack}
                 onChangeText={(value: string) =>
                   handleChange(field?.key, value)
                 }
