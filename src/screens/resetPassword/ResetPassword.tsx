@@ -6,7 +6,6 @@ import styles from './ResetPasswordStyles';
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
 import {CHANGE_PASSWORD_FIELDS} from '../../constants/InputFields';
-import {COLORS} from '../../constants/Colors';
 import {useResetPassword} from './useResetPassword';
 import Loading from '../../components/loading/Loading';
 
@@ -28,7 +27,6 @@ const ResetPassword = () => {
             text="Current Password"
             secureTextEntry={true}
             value={password.oldPassword}
-            placeholderTextColor={COLORS.lightBlack}
             onChangeText={(value: string) => handleChange('oldPassword', value)}
           />
           <TouchableOpacity style={styles.forgotPassword}>
@@ -40,7 +38,6 @@ const ResetPassword = () => {
               placeholder={field?.placeholder}
               text={field?.text}
               value={field?.value}
-              placeholderTextColor={COLORS.lightBlack}
               secureTextEntry={field?.secureTextEntry}
               onChangeText={(value: string) => handleChange(field?.key, value)}
             />

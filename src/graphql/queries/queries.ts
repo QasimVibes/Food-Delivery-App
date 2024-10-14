@@ -4,14 +4,11 @@ export const GET_CURRENT_USER = gql`
   query GetData {
     getCurrentUser {
       address
-      createdAt
       dateOfBirth
       email
       fullname
-      id
       imageUrl
       mobileNumber
-      updatedAt
     }
   }
 `;
@@ -63,5 +60,32 @@ export const CHANGE_PASSWORD = gql`
 export const RESET_PASSWORD = gql`
   mutation ResetPassword($password: String!) {
     resetPassword(password: $password)
+  }
+`;
+
+export const USER_PROFILE = gql`
+  mutation UpdateUserProfile(
+    $dateOfBirth: DateTimeISO!
+    $email: String!
+    $fullname: String!
+    $mobileNumber: String!
+    $imageUrl: String
+    $address: String
+  ) {
+    updateUser(
+      dateOfBirth: $dateOfBirth
+      email: $email
+      fullname: $fullname
+      mobileNumber: $mobileNumber
+      imageUrl: $imageUrl
+      address: $address
+    ) {
+      address
+      dateOfBirth
+      email
+      fullname
+      imageUrl
+      mobileNumber
+    }
   }
 `;

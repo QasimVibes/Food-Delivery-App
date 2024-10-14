@@ -6,7 +6,6 @@ import Header from '../../components/header/Header';
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
 import {CHANGE_PASSWORD_FIELDS} from '../../constants/InputFields';
-import {COLORS} from '../../constants/Colors';
 import {useChangePassword} from './useChangePassword';
 import Loading from '../../components/loading/Loading';
 
@@ -30,7 +29,6 @@ const ChangePassword = () => {
               placeholder={field?.placeholder}
               text={field?.text}
               value={field?.value}
-              placeholderTextColor={COLORS.lightBlack}
               secureTextEntry={field?.secureTextEntry}
               onChangeText={(value: string) => handleChange(field?.key, value)}
             />

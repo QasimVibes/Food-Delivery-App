@@ -4,6 +4,7 @@ import styles from './InputStyles';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {InputProps} from '../../types/types';
 import {useInput} from './useInput';
+import {COLORS} from '../../constants/Colors';
 
 const Input: React.FC<InputProps> = ({
   placeholder,
@@ -31,6 +32,7 @@ const Input: React.FC<InputProps> = ({
           secureTextEntry={secureTextEntry}
           value={value}
           onChangeText={onChangeText}
+          placeholderTextColor={COLORS.lightBlack}
           {...props}
         />
       )}

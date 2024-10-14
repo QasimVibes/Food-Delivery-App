@@ -45,3 +45,18 @@ export type ResetPasswordInput = {
   newPassword: string;
   confirmPassword: string;
 };
+
+export type ProfileInput = {
+  fullname: string;
+  dateOfBirth: string;
+  email: string;
+  mobileNumber: string;
+  imageUrl: string;
+  address: string;
+};
+
+export type UserState = {
+  user: User | null;
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
+};

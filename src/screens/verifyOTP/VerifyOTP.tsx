@@ -4,7 +4,6 @@ import styles from './VerifyOtpStyles';
 import Container from '../../components/container/Container';
 import Button from '../../components/button/Button';
 import Header from '../../components/header/Header';
-import {COLORS} from '../../constants/Colors';
 import {useVerifyOtp} from './useVerifyOtp';
 import Loading from '../../components/loading/Loading';
 
@@ -34,7 +33,6 @@ export default function VerifyOtp() {
                 maxLength={1}
                 keyboardType="numeric"
                 style={styles.otpInput}
-                placeholderTextColor={COLORS.lightBlack}
               />
             ))}
           </View>

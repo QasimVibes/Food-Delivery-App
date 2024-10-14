@@ -5,7 +5,6 @@ import styles from './ForgotPasswordStyles';
 import Header from '../../components/header/Header';
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
-import {COLORS} from '../../constants/Colors';
 import {useForgotPassword} from './useForgotPassword';
 import Loading from '../../components/loading/Loading';
 
@@ -28,7 +27,6 @@ const ForgotPassword = () => {
             value={email}
             onChangeText={handleChange}
             keyboardType="email-address"
-            placeholderTextColor={COLORS.lightBlack}
           />
           <View style={styles.buttonContainer}>
             <Button

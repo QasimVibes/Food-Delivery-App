@@ -3,6 +3,7 @@ import {
   LoginUserInput,
   ChangePasswordInput,
   ResetPasswordInput,
+  ProfileInput,
 } from '../types/types';
 
 export const validateSignUpData = (data: SignUpUserInput) => {
@@ -121,6 +122,37 @@ export const validateResetPasswordData = (data: ResetPasswordInput) => {
   if (data.newPassword === data.oldPassword) {
     errors.newPassword = 'New password must be different from the old one';
     errors.confirmPassword = 'New password must be different from the old one';
+  }
+
+  return errors;
+};
+
+export const validateProfileData = (data: ProfileInput) => {
+  const errors: {[key: string]: string} = {};
+
+  if (!data.fullname.trim()) {
+    errors.fullname = 'Full name is required';
+  } else if (data.fullname.trim().length < 3) {
+    errors.fullname = 'Full name must be at least 3 characters long';
+  }
+
+  const email = data.email?.trim() || '';
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email) {
+    errors.email = 'Email is required';
+  } else if (!emailRegex.test(email)) {
+    errors.email = 'Invalid email address';
+  }
+  const mobileNumber = data.mobileNumber?.trim() || '';
+  const mobileNumberRegex = /^[0-9]{10,}$/;
+  if (!mobileNumber) {
+    errors.mobileNumber = 'Mobile number is required';
+  } else if (!mobileNumberRegex.test(mobileNumber)) {
+    errors.mobileNumber = 'Invalid mobile number. It must be 10 digits';
+  }
+
+  if (!data.dateOfBirth) {
+    errors.dateOfBirth = 'Date of birth is required';
   }
 
   return errors;

@@ -1,6 +1,7 @@
 import {
   ChangePasswordInput,
   LoginUserInput,
+  ProfileInput,
   SignUpUserInput,
 } from '../types/types';
 
@@ -83,6 +84,49 @@ export const CHANGE_PASSWORD_FIELDS = (data: ChangePasswordInput) => {
       value: data?.confirmPassword,
       key: 'confirmPassword',
       secureTextEntry: true,
+    },
+  ];
+  return inputFields;
+};
+
+export const PROFILE_FIELDS = (data: ProfileInput) => {
+  const inputFields = [
+    {
+      placeholder: 'John Doe',
+      text: 'Full name',
+      value: data?.fullname,
+      key: 'fullname',
+      secureTextEntry: false,
+    },
+    {
+      placeholder: 'DD/MM/YYYY',
+      text: 'Date of Birth',
+      value: data?.dateOfBirth,
+      key: 'dateOfBirth',
+      isDatePicker: true,
+    },
+    {
+      placeholder: 'example@example.com',
+      text: 'Email',
+      value: data?.email,
+      key: 'email',
+      secureTextEntry: false,
+      keyboardType: 'email-address',
+    },
+    {
+      placeholder: '+91 9876543210',
+      text: 'Mobile Number',
+      value: data?.mobileNumber,
+      key: 'mobileNumber',
+      secureTextEntry: false,
+      keyboardType: 'phone-pad',
+    },
+    {
+      placeholder: '123 Main St, New York, NY',
+      text: 'Address',
+      value: data?.address,
+      key: 'address',
+      secureTextEntry: false,
     },
   ];
   return inputFields;

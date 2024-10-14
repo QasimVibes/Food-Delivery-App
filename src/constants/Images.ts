@@ -20,6 +20,7 @@ import ON_BOARDING3 from '../assets/images/onboarding3.png';
 import ORDER_FOOD from '../assets/images/orderFood.png';
 import PAYMENT from '../assets/images/payment.png';
 import DELIVER from '../assets/images/deliver.png';
+import CAMERA from '../assets/images/camera.png';
 
 export {
   GO_BACK,
@@ -44,4 +45,5 @@ export {
   ORDER_FOOD,
   PAYMENT,
   DELIVER,
+  CAMERA,
 };
