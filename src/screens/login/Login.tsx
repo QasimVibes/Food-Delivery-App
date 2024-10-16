@@ -9,8 +9,10 @@ import SignupOptions from '../../components/signupOptions/SignupOptions';
 import {useLogin} from './useLogin';
 import {LOGIN_FIELDS} from '../../constants/InputFields';
 import Loading from '../../components/loading/Loading';
+import useTypeNavigation from '../../hooks/useTypeNavigationHook';
 
 const Login = () => {
+  const navigation = useTypeNavigation();
   const {data, handleChange, handleSubmit, user} = useLogin();
   const inputFields = LOGIN_FIELDS(data);
   return (
@@ -41,7 +43,9 @@ const Login = () => {
                 }
               />
             ))}
-            <TouchableOpacity style={styles.forgotPassword}>
+            <TouchableOpacity
+              style={styles.forgotPassword}
+              onPress={() => navigation.navigate('ForgotPassword')}>
               <Text style={styles.forgotPasswordText}>Forgot Password</Text>
             </TouchableOpacity>
           </View>
@@ -57,7 +61,11 @@ const Login = () => {
             </View>
             <Text style={styles.signUpText}>
               Don’t have an account?{' '}
-              <Text style={styles.signUpLink}>Sign Up</Text>{' '}
+              <Text
+                style={styles.signUpLink}
+                onPress={() => navigation.navigate('Signup')}>
+                Sign Up
+              </Text>
             </Text>
           </View>
         </Container>

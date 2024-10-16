@@ -6,8 +6,11 @@ import Button from '../../components/button/Button';
 import Header from '../../components/header/Header';
 import {useVerifyOtp} from './useVerifyOtp';
 import Loading from '../../components/loading/Loading';
+import {useRoute} from '@react-navigation/native';
 
 export default function VerifyOtp() {
+  const route = useRoute();
+  const {email} = route.params as {email: string};
   const {otp, handleOtpChange, handleKeyPress, inputRefs, handleSubmit, user} =
     useVerifyOtp();
   return (
@@ -42,7 +45,7 @@ export default function VerifyOtp() {
               paddingVertical={8}
               fontSize={17}
               width={250}
-              onPress={handleSubmit}
+              onPress={() => handleSubmit(email)}
             />
           </View>
         </Container>

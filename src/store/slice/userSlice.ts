@@ -32,7 +32,7 @@ export const updateProfile = createAsyncThunk(
           address: userInput?.address,
         },
       });
-      return response.data.updateProfile;
+      return response.data.updateUser;
     } catch (error: any) {
       return rejectWithValue(error.message || 'Update profile failed');
     }

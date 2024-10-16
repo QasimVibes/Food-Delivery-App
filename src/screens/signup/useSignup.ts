@@ -4,6 +4,7 @@ import {signup} from '../../store/slice/authSlice';
 import {SignUpUserInput} from '../../types/types';
 import {validateSignUpData} from '../../utils/validation';
 import Toast from 'react-native-toast-message';
+import useTypeNavigation from '../../hooks/useTypeNavigationHook';
 
 export const useSignup = () => {
   const [data, setData] = useState<SignUpUserInput>({
@@ -13,6 +14,7 @@ export const useSignup = () => {
     mobileNumber: '',
     dateOfBirth: '',
   });
+  const navigation = useTypeNavigation();
   const dispatch = useAppDispatch();
   const user = useAppSelector(state => state.auth);
   const handleChange = (name: string, value: string) => {
@@ -44,6 +46,7 @@ export const useSignup = () => {
         text1: 'Signup successful',
         text2: 'Please login with your credentials',
       });
+      navigation.navigate('Login');
     } catch (error) {
       Toast.show({type: 'error', text1: error as string});
     }

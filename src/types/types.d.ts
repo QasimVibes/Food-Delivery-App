@@ -60,3 +60,20 @@ export type UserState = {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 };
+
+export type NavigatorTypes = {
+  Login: undefined;
+  Signup: undefined;
+  ForgotPassword: undefined;
+  VerifyOtp: {email: string};
+  ChangePassword: {email: string; otp: string};
+  ResetPassword: undefined;
+  Profile: undefined;
+  DeliveryAdress: undefined;
+  Orders: undefined;
+  OrderCancel: undefined;
+  OrderCancelled: undefined;
+  Details: undefined;
+  PlaceOrder: undefined;
+  OrderConfirmed: undefined;
+};

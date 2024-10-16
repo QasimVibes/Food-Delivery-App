@@ -8,8 +8,11 @@ import Button from '../../components/button/Button';
 import {CHANGE_PASSWORD_FIELDS} from '../../constants/InputFields';
 import {useChangePassword} from './useChangePassword';
 import Loading from '../../components/loading/Loading';
+import {useRoute} from '@react-navigation/native';
 
 const ChangePassword = () => {
+  const route = useRoute();
+  const {email, otp} = route.params as {email: string; otp: string};
   const {password, handleChange, handleSubmit, user} = useChangePassword();
   const inputFields = CHANGE_PASSWORD_FIELDS(password);
   return (
@@ -39,7 +42,7 @@ const ChangePassword = () => {
               paddingVertical={8}
               fontSize={17}
               width={250}
-              onPress={handleSubmit}
+              onPress={() => handleSubmit(email, otp)}
             />
           </View>
         </Container>

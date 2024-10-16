@@ -3,9 +3,11 @@ import {validateForgotPassword} from '../../utils/validation';
 import Toast from 'react-native-toast-message';
 import {useAppDispatch, useAppSelector} from '../../hooks/reduxHook';
 import {forgotPassword} from '../../store/slice/authSlice';
+import useTypeNavigation from '../../hooks/useTypeNavigationHook';
 
 export const useForgotPassword = () => {
   const [email, setEmail] = useState('');
+  const navigation = useTypeNavigation();
   const dispatch = useAppDispatch();
   const user = useAppSelector(state => state.auth);
   const handleChange = (value: string) => {
@@ -28,6 +30,7 @@ export const useForgotPassword = () => {
         text1: 'Email sent successfully',
         text2: 'Please check your email',
       });
+      navigation.navigate('VerifyOtp', {email: email.toLowerCase()});
     } catch (error) {
       Toast.show({type: 'error', text1: error as string});
     }

@@ -9,8 +9,10 @@ import SignupOptions from '../../components/signupOptions/SignupOptions';
 import {useSignup} from './useSignup';
 import {SIGNUP_FIELDS} from '../../constants/InputFields';
 import Loading from '../../components/loading/Loading';
+import useTypeNavigation from '../../hooks/useTypeNavigationHook';
 
 const Signup = () => {
+  const navigation = useTypeNavigation();
   const {data, handleChange, handleSubmit, user} = useSignup();
   const inputFields = SIGNUP_FIELDS(data);
 
@@ -50,7 +52,11 @@ const Signup = () => {
             </View>
             <Text style={styles.signUpText}>
               Already have an account?{' '}
-              <Text style={styles.loginLink}>Log in</Text>{' '}
+              <Text
+                style={styles.loginLink}
+                onPress={() => navigation.navigate('Login')}>
+                Log in
+              </Text>{' '}
             </Text>
           </View>
         </Container>
