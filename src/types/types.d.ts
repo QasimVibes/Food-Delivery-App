@@ -17,6 +17,7 @@ export type AuthState = {
   user: User | null;
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
+  isLogin: boolean;
 };
 
 export type LoginUserInput = {

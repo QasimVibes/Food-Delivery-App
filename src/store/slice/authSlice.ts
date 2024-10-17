@@ -20,6 +20,7 @@ const initialState: AuthState = {
   user: null,
   status: 'idle',
   error: null,
+  isLogin: false,
 };
 
 export const signup = createAsyncThunk(
@@ -32,7 +33,9 @@ export const signup = createAsyncThunk(
       });
       return response.data.signup;
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Signup failed');
+      return rejectWithValue(
+        error.networkError.result.errors[0].message || 'Signup failed',
+      );
     }
   },
 );
@@ -47,7 +50,9 @@ export const login = createAsyncThunk(
       });
       return response.data.login;
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Login failed');
+      return rejectWithValue(
+        error.networkError.result.errors[0].message || 'Login failed',
+      );
     }
   },
 );
@@ -62,7 +67,9 @@ export const forgotPassword = createAsyncThunk(
       });
       return response.data.forgotPassword;
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Forgot password failed');
+      return rejectWithValue(
+        error.networkError.result.errors[0].message || 'Forgot password failed',
+      );
     }
   },
 );
@@ -77,7 +84,9 @@ export const verifyOtp = createAsyncThunk(
       });
       return response.data.verifyOtp;
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Verify otp failed');
+      return rejectWithValue(
+        error.networkError.result.errors[0].message || 'Verify otp failed',
+      );
     }
   },
 );
@@ -92,7 +101,9 @@ export const changePassword = createAsyncThunk(
       });
       return response.data.changePassword;
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Change password failed');
+      return rejectWithValue(
+        error.networkError.result.errors[0].message || 'Change password failed',
+      );
     }
   },
 );
@@ -107,7 +118,9 @@ export const resetPassword = createAsyncThunk(
       });
       return response.data.resetPassword;
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Reset password failed');
+      return rejectWithValue(
+        error.networkError.result.errors[0].message || 'Reset password failed',
+      );
     }
   },
 );
@@ -133,14 +146,17 @@ const authSlice = createSlice({
       .addCase(login.pending, state => {
         state.status = 'loading';
         state.error = null;
+        state.isLogin = false;
       })
       .addCase(login.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.user = action.payload;
+        state.isLogin = true;
       })
       .addCase(login.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload as string;
+        state.isLogin = false;
       })
       .addCase(forgotPassword.pending, state => {
         state.status = 'loading';

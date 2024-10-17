@@ -1,9 +1,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useEffect, useState} from 'react';
+import {useAppSelector} from '../hooks/reduxHook';
 
 export const useNavigation = () => {
   const [currentUser, setCurrentUser] = useState<string | null>(null);
-
+  const user = useAppSelector(state => state.auth.isLogin);
   useEffect(() => {
     const fetchCurrentUser = async () => {
       try {
@@ -15,7 +16,7 @@ export const useNavigation = () => {
     };
 
     fetchCurrentUser();
-  }, []);
+  }, [user]);
 
   return currentUser;
 };

@@ -34,7 +34,9 @@ export const updateProfile = createAsyncThunk(
       });
       return response.data.updateUser;
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Update profile failed');
+      return rejectWithValue(
+        error.networkError.result.errors[0].message || 'Update profile failed',
+      );
     }
   },
 );
@@ -48,7 +50,10 @@ export const getUserProfile = createAsyncThunk(
       });
       return response.data.getCurrentUser;
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Get user profile failed');
+      return rejectWithValue(
+        error.networkError.result.errors[0].message ||
+          'Get user profile failed',
+      );
     }
   },
 );
