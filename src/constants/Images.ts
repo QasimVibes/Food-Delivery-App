@@ -21,6 +21,22 @@ import ORDER_FOOD from '../assets/images/orderFood.png';
 import PAYMENT from '../assets/images/payment.png';
 import DELIVER from '../assets/images/deliver.png';
 import CAMERA from '../assets/images/camera.png';
+import LOGOUT from '../assets/images/logout.png';
+import SETTING from '../assets/images/setting.png';
+import FAQ from '../assets/images/faq.png';
+import PHONE from '../assets/images/phone.png';
+import CARD from '../assets/images/card.png';
+import LOCATION from '../assets/images/location.png';
+import PERSON from '../assets/images/person.png';
+import ORANGE_BAG from '../assets/images/orangebag.png';
+import CART from '../assets/images/cart.png';
+import BELL from '../assets/images/bell.png';
+import SEARCH_FILTER from '../assets/images/searchFilter.png';
+import SNACK from '../assets/images/snack.png';
+import MEAL from '../assets/images/meal.png';
+import VEGAN from '../assets/images/vegan.png';
+import DESSERT from '../assets/images/dessert.png';
+import DRINK from '../assets/images/drink.png';
 
 export {
   GO_BACK,
@@ -46,4 +62,20 @@ export {
   PAYMENT,
   DELIVER,
   CAMERA,
+  LOGOUT,
+  SETTING,
+  FAQ,
+  PHONE,
+  CARD,
+  LOCATION,
+  PERSON,
+  ORANGE_BAG,
+  CART,
+  BELL,
+  SEARCH_FILTER,
+  SNACK,
+  MEAL,
+  VEGAN,
+  DESSERT,
+  DRINK,
 };
