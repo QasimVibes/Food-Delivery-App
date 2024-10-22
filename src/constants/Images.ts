@@ -37,6 +37,7 @@ import MEAL from '../assets/images/meal.png';
 import VEGAN from '../assets/images/vegan.png';
 import DESSERT from '../assets/images/dessert.png';
 import DRINK from '../assets/images/drink.png';
+import CIRCLE from '../assets/images/circle.png';
 
 export {
   GO_BACK,
@@ -78,4 +79,5 @@ export {
   VEGAN,
   DESSERT,
   DRINK,
+  CIRCLE,
 };
