@@ -38,6 +38,8 @@ import VEGAN from '../assets/images/vegan.png';
 import DESSERT from '../assets/images/dessert.png';
 import DRINK from '../assets/images/drink.png';
 import CIRCLE from '../assets/images/circle.png';
+import LOGO from '../assets/images/logo.png';
+import BOT_STAR from '../assets/images/botstar.png';
 
 export {
   GO_BACK,
@@ -80,4 +82,6 @@ export {
   DESSERT,
   DRINK,
   CIRCLE,
+  LOGO,
+  BOT_STAR,
 };

@@ -78,3 +78,13 @@ export type NavigatorTypes = {
   PlaceOrder: undefined;
   OrderConfirmed: undefined;
 };
+
+export type HeaderProps = {
+  title: string;
+  isShown?: boolean;
+  subTitle?: string;
+};
+
+export type HomeHeaderProps = {
+  greetingShown?: boolean;
+};

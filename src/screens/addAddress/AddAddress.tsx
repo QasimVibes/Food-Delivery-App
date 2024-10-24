@@ -1,13 +1,13 @@
 import {View, ScrollView, Image} from 'react-native';
 import React from 'react';
-import styles from './DeliveryAdressStyles';
+import styles from './AddAddressStyles';
 import Header from '../../components/header/Header';
 import Container from '../../components/container/Container';
 import {HOME} from '../../constants/Images';
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
 
-const DeliveryAdress = () => {
+const AddAddress = () => {
   return (
     <View style={styles.container}>
       <Header title="Add New Address" />
@@ -43,4 +43,4 @@ const DeliveryAdress = () => {
   );
 };
 
-export default DeliveryAdress;
+export default AddAddress;

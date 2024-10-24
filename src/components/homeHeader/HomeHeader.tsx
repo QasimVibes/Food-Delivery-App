@@ -1,28 +1,14 @@
-import {Text, TextInput, TouchableOpacity, View, Image} from 'react-native';
-import {
-  PERSON,
-  BELL,
-  ORANGE_BAG,
-  SEARCH_FILTER,
-  CART,
-} from '../../constants/Images';
-import {COLORS} from '../../constants/Colors';
+import {Text, TouchableOpacity, View, Image} from 'react-native';
+import {PERSON, BELL, ORANGE_BAG, CART} from '../../constants/Images';
 import styles from './HomeHeaderStyles';
+import {HomeHeaderProps} from '../../types/types';
+import SearchBox from '../searchBox/SearchBox';
 
-const HomeHeader = ({greetingShown}: {greetingShown?: boolean}) => {
+const HomeHeader = ({greetingShown}: HomeHeaderProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <View style={styles.searchBarContainer}>
-          <TextInput
-            style={styles.searchInput}
-            placeholderTextColor={COLORS.lightBlack}
-            placeholder="Search"
-          />
-          <TouchableOpacity style={styles.searchButton}>
-            <Image source={SEARCH_FILTER} style={styles.searchIcon} />
-          </TouchableOpacity>
-        </View>
+        <SearchBox />
         <View style={styles.iconsContainer}>
           <TouchableOpacity style={styles.button}>
             <Image
