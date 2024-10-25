@@ -13,18 +13,20 @@ const Details = () => {
           <GoBack />
           <View style={styles.headerContainer}>
             <View style={styles.nameContainer}>
-              <Text style={styles.title}>Fresh Prawn Ceviche</Text>
+              <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">
+                Fresh Prawn Ceviche
+              </Text>
               <View style={styles.icon} />
             </View>
             <View style={styles.imageContainer}>
-              <Image source={HEART} style={styles.image} resizeMode="contain" />
+              <Image source={HEART} style={styles.image} />
             </View>
           </View>
         </View>
         <View style={styles.ratingContainer}>
-          <View style={styles.ratingRow}>
+          <View style={styles.ratingContainer}>
             <Text style={styles.rating}>4.5</Text>
-            <Image source={STAR} resizeMode="contain" style={styles.star} />
+            <Image source={STAR} style={styles.star} />
           </View>
         </View>
       </View>
@@ -39,19 +41,11 @@ const Details = () => {
             <View style={styles.quantityContainer}>
               <View style={styles.quantity}>
                 <TouchableOpacity style={styles.quantityButton}>
-                  <Image
-                    source={MINUS}
-                    style={styles.quantityIcon}
-                    resizeMode="contain"
-                  />
+                  <Image source={MINUS} style={styles.quantityIcon} />
                 </TouchableOpacity>
                 <Text style={styles.quantityText}>2</Text>
                 <TouchableOpacity style={styles.quantityButton}>
-                  <Image
-                    source={PLUS}
-                    style={styles.quantityIcon}
-                    resizeMode="contain"
-                  />
+                  <Image source={PLUS} style={styles.quantityIcon} />
                 </TouchableOpacity>
               </View>
             </View>
@@ -93,11 +87,7 @@ const Details = () => {
           </View>
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.button}>
-              <Image
-                source={BAG}
-                style={styles.buttonImage}
-                resizeMode="contain"
-              />
+              <Image source={BAG} style={styles.buttonImage} />
               <Text style={styles.buttonText}>Add to Cart</Text>
             </TouchableOpacity>
           </View>

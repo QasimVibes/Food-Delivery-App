@@ -7,9 +7,11 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
   },
   header: {
-    height: '20%',
-    paddingHorizontal: 20,
+    height: 150,
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: 20,
   },
   headerRow: {
     flexDirection: 'row',
@@ -26,6 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
+    maxWidth: '85%',
   },
   title: {
     color: COLORS.dark,
@@ -49,29 +52,29 @@ const styles = StyleSheet.create({
   image: {
     width: 10,
     height: 10,
+    resizeMode: 'contain',
   },
   ratingContainer: {
-    marginTop: 5,
-    marginLeft: 20,
-  },
-  ratingRow: {
-    backgroundColor: COLORS.orangeBase,
+    position: 'absolute',
+    left: 10,
+    bottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
     gap: 5,
-    paddingHorizontal: 5,
-    paddingVertical: 2,
+    backgroundColor: COLORS.orangeBase,
     borderRadius: 30,
-    alignSelf: 'flex-start',
+    paddingHorizontal: 5,
+    marginLeft: 10,
+  },
+  rating: {
+    fontFamily: 'LeagueSpartan-Regular',
+    fontSize: 12,
+    color: COLORS.lightWhite,
   },
   star: {
     width: 9,
     height: 9,
-  },
-  rating: {
-    fontSize: 12,
-    fontFamily: 'LeagueSpartan-Regular',
-    color: COLORS.light,
+    resizeMode: 'contain',
   },
   scrollContainer: {
     flexGrow: 1,
@@ -87,19 +90,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderBottomColor: COLORS.lightOrange,
     borderBottomWidth: 1,
+    paddingBottom: 10,
   },
   price: {
     fontFamily: 'LeagueSpartan-Bold',
     fontSize: 24,
     lineHeight: 26,
     color: COLORS.orangeBase,
-    paddingBottom: 10,
   },
   quantityContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
-    paddingBottom: 10,
   },
   quantity: {
     flexDirection: 'row',
@@ -117,6 +119,7 @@ const styles = StyleSheet.create({
   quantityIcon: {
     width: 10,
     height: 10,
+    resizeMode: 'contain',
   },
   quantityText: {
     fontFamily: 'LeagueSpartan-Regular',
@@ -205,6 +208,7 @@ const styles = StyleSheet.create({
   buttonImage: {
     width: 16,
     height: 16,
+    resizeMode: 'contain',
   },
   buttonText: {
     fontFamily: 'LeagueSpartan-Medium',
