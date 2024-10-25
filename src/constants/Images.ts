@@ -44,6 +44,7 @@ import INSTAGRAM from '../assets/images/instagram.png';
 import GLOBAL from '../assets/images/global.png';
 import HEAD_PHONE from '../assets/images/headphone.png';
 import FILL_HEART from '../assets/images/fillheart.png';
+import BADGE from '../assets/images/badge.png';
 
 export {
   GO_BACK,
@@ -92,4 +93,5 @@ export {
   GLOBAL,
   HEAD_PHONE,
   FILL_HEART,
+  BADGE,
 };
