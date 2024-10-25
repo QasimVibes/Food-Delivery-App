@@ -1,5 +1,5 @@
 import {Text, TouchableOpacity, View, Image} from 'react-native';
-import {PERSON, BELL, ORANGE_BAG, CART} from '../../constants/Images';
+import {PERSON, BELL, BAG, CART} from '../../constants/Images';
 import styles from './HomeHeaderStyles';
 import {HomeHeaderProps} from '../../types/types';
 import SearchBox from '../searchBox/SearchBox';
@@ -11,10 +11,7 @@ const HomeHeader = ({greetingShown}: HomeHeaderProps) => {
         <SearchBox />
         <View style={styles.iconsContainer}>
           <TouchableOpacity style={styles.button}>
-            <Image
-              source={greetingShown ? CART : ORANGE_BAG}
-              style={styles.image}
-            />
+            <Image source={greetingShown ? CART : BAG} style={styles.image} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
             <Image source={BELL} style={styles.image} />

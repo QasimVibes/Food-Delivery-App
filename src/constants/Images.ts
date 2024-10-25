@@ -28,7 +28,6 @@ import PHONE from '../assets/images/phone.png';
 import CARD from '../assets/images/card.png';
 import LOCATION from '../assets/images/location.png';
 import PERSON from '../assets/images/person.png';
-import ORANGE_BAG from '../assets/images/orangebag.png';
 import CART from '../assets/images/cart.png';
 import BELL from '../assets/images/bell.png';
 import SEARCH_FILTER from '../assets/images/searchFilter.png';
@@ -40,6 +39,11 @@ import DRINK from '../assets/images/drink.png';
 import CIRCLE from '../assets/images/circle.png';
 import LOGO from '../assets/images/logo.png';
 import BOT_STAR from '../assets/images/botstar.png';
+import WHATSAPP from '../assets/images/whatsapp.png';
+import INSTAGRAM from '../assets/images/instagram.png';
+import GLOBAL from '../assets/images/global.png';
+import HEAD_PHONE from '../assets/images/headphone.png';
+import FILL_HEART from '../assets/images/fillheart.png';
 
 export {
   GO_BACK,
@@ -72,7 +76,6 @@ export {
   CARD,
   LOCATION,
   PERSON,
-  ORANGE_BAG,
   CART,
   BELL,
   SEARCH_FILTER,
@@ -84,4 +87,9 @@ export {
   CIRCLE,
   LOGO,
   BOT_STAR,
+  WHATSAPP,
+  INSTAGRAM,
+  GLOBAL,
+  HEAD_PHONE,
+  FILL_HEART,
 };

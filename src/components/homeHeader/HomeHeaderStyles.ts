@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     width: 16,
     height: 16,
     resizeMode: 'contain',
+    tintColor: COLORS.orangeBase,
   },
   button: {
     backgroundColor: COLORS.lightWhite,
