@@ -8,7 +8,7 @@ const OrderCancelled = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.content}>
         <View style={styles.imageContainer}>
-          <Image source={FACE} style={styles.image} resizeMode="contain" />
+          <Image source={FACE} style={styles.image} />
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.title}>¡Order Cancelled!</Text>

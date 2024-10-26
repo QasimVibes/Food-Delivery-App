@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     width: 140,
     height: 140,
     maxWidth: '100%',
+    resizeMode: 'contain',
   },
   textContainer: {
     alignItems: 'center',
