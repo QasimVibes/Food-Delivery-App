@@ -11,6 +11,7 @@ export type SignUpUserInput = {
   password: string;
   mobileNumber: string;
   dateOfBirth: string;
+  role: string;
 };
 
 export type AuthState = {
@@ -87,4 +88,15 @@ export type HeaderProps = {
 
 export type HomeHeaderProps = {
   greetingShown?: boolean;
+};
+
+export type RolesOptions = {
+  label: string;
+  value: string;
+};
+
+export type DropdownProps = {
+  options: RolesOptions[];
+  selectedValue: string;
+  onValueChange: (value: string) => void;
 };

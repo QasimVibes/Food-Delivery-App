@@ -39,6 +39,10 @@ export const validateSignUpData = (data: SignUpUserInput) => {
     errors.dateOfBirth = 'Date of birth is required';
   }
 
+  if (!data.role) {
+    errors.role = 'Role is required';
+  }
+
   return errors;
 };
 

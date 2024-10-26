@@ -20,6 +20,7 @@ export const SIGNUP_USER = gql`
     $dateOfBirth: DateTimeISO!
     $password: String!
     $fullname: String!
+    $role: String
   ) {
     signup(
       mobileNumber: $mobileNumber
@@ -27,6 +28,7 @@ export const SIGNUP_USER = gql`
       dateOfBirth: $dateOfBirth
       password: $password
       fullname: $fullname
+      role: $role
     ) {
       id
     }

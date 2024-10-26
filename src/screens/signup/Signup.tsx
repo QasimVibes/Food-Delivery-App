@@ -10,6 +10,8 @@ import {useSignup} from './useSignup';
 import {SIGNUP_FIELDS} from '../../constants/InputFields';
 import Loading from '../../components/loading/Loading';
 import useTypeNavigation from '../../hooks/useTypeNavigationHook';
+import Dropdown from '../../components/dropdown/Dropdown';
+import {ROLES_OPTIONS} from '../../constants/Constants';
 
 const Signup = () => {
   const navigation = useTypeNavigation();
@@ -35,6 +37,11 @@ const Signup = () => {
               onChangeText={(value: string) => handleChange(field?.key, value)}
             />
           ))}
+          <Dropdown
+            options={ROLES_OPTIONS}
+            selectedValue={data?.role}
+            onValueChange={(value: string) => handleChange('role', value)}
+          />
           <View>
             <Text style={styles.termsText}>
               By continuing, you agree to{'\n'}

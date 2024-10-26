@@ -13,6 +13,7 @@ export const useSignup = () => {
     email: '',
     mobileNumber: '',
     dateOfBirth: '',
+    role: '',
   });
   const navigation = useTypeNavigation();
   const dispatch = useAppDispatch();
@@ -40,6 +41,7 @@ export const useSignup = () => {
         email: '',
         mobileNumber: '',
         dateOfBirth: '',
+        role: '',
       });
       Toast.show({
         type: 'success',

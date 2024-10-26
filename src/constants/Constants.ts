@@ -47,3 +47,9 @@ export const CONTACT_DATA = [
     logo: INSTAGRAM,
   },
 ];
+
+export const ROLES_OPTIONS = [
+  {label: 'CUSTOMER', value: 'CUSTOMER'},
+  {label: 'DELIVERY_PERSON', value: 'DELIVERY_PERSON'},
+  {label: 'RESTAURANT_OWNER', value: 'RESTAURANT_OWNER'},
+];
