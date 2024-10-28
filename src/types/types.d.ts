@@ -71,13 +71,23 @@ export type NavigatorTypes = {
   ChangePassword: {email: string; otp: string};
   ResetPassword: undefined;
   Profile: undefined;
-  DeliveryAdress: undefined;
+  DeliveryAddress: undefined;
   Orders: undefined;
   OrderCancel: undefined;
   OrderCancelled: undefined;
   Details: undefined;
   PlaceOrder: undefined;
   OrderConfirmed: undefined;
+  Contact: undefined;
+  AddAddress: undefined;
+  BestSeller: undefined;
+  Faqs: undefined;
+  Discounted: undefined;
+  Foods: undefined;
+  Recommendation: undefined;
+  Launch: undefined;
+  Home: undefined;
+  FoodReview: undefined;
 };
 
 export type HeaderProps = {

@@ -45,6 +45,11 @@ import GLOBAL from '../assets/images/global.png';
 import HEAD_PHONE from '../assets/images/headphone.png';
 import FILL_HEART from '../assets/images/fillheart.png';
 import BADGE from '../assets/images/badge.png';
+import BOARD from '../assets/images/board.png';
+import DISH from '../assets/images/dish.png';
+import SECONDARY_HEART from '../assets/images/secondaryheart.png';
+import SECONDARY_HEADPHONE from '../assets/images/secondaryheadphone.png';
+import SECONDARY_HOME from '../assets/images/secondaryhome.png';
 
 export {
   GO_BACK,
@@ -94,4 +99,9 @@ export {
   HEAD_PHONE,
   FILL_HEART,
   BADGE,
+  BOARD,
+  DISH,
+  SECONDARY_HEART,
+  SECONDARY_HEADPHONE,
+  SECONDARY_HOME,
 };
