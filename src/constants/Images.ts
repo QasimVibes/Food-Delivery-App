@@ -50,6 +50,7 @@ import DISH from '../assets/images/dish.png';
 import SECONDARY_HEART from '../assets/images/secondaryheart.png';
 import SECONDARY_HEADPHONE from '../assets/images/secondaryheadphone.png';
 import SECONDARY_HOME from '../assets/images/secondaryhome.png';
+import KEY from '../assets/images/key.png';
 
 export {
   GO_BACK,
@@ -104,4 +105,5 @@ export {
   SECONDARY_HEART,
   SECONDARY_HEADPHONE,
   SECONDARY_HOME,
+  KEY,
 };

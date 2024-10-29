@@ -17,14 +17,13 @@ const PlaceOrder = () => {
           <View style={styles.addressContainer}>
             <View style={styles.shippingAddressContainer}>
               <Text style={styles.shippingAddress}>Shipping Address</Text>
-              <Image
-                source={EDIT}
-                resizeMode="contain"
-                style={styles.editIcon}
-              />
+              <Image source={EDIT} style={styles.editIcon} />
             </View>
             <View style={styles.addressSection}>
-              <Text style={styles.address}>
+              <Text
+                style={styles.address}
+                numberOfLines={1}
+                ellipsizeMode="tail">
                 778 Locust View Drive Oaklanda, CA
               </Text>
             </View>

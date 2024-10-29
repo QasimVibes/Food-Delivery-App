@@ -12,6 +12,19 @@ import OrderCancelled from '../screens/orderCancelled/OrderCancelled';
 import OrderConfirmed from '../screens/orderConfirmed/OrderConfirmed';
 import PlaceOrder from '../screens/placeOrder/PlaceOrder';
 import Details from '../screens/details/Details';
+import Home from '../screens/home/Home';
+import BestSeller from '../screens/bestSeller/BestSeller';
+import AddAddress from '../screens/addAddress/AddAddress';
+import Contact from '../screens/contact/Contact';
+import Discounted from '../screens/discounted/Discounted';
+import Faqs from '../screens/faqs/Faqs';
+import FoodReview from '../screens/foodReview/FoodReview';
+import Foods from '../screens/foods/Foods';
+import Recommendation from '../screens/recommendation/Recommendation';
+import Launch from '../screens/launch/Launch';
+import Setting from '../screens/setting/Setting';
+import Payment from '../screens/payment/Payment';
+import {BottomTabNavigator} from '../navigation/bottomTabNavigator/BottomTabNavigator';
 import {
   SETTING,
   FAQ,
@@ -26,17 +39,6 @@ import {
   BOARD,
   SECONDARY_HEADPHONE,
 } from '../constants/Images';
-import Home from '../screens/home/Home';
-import BestSeller from '../screens/bestSeller/BestSeller';
-import {BottomTabNavigator} from '../navigation/bottomTabNavigator/BottomTabNavigator';
-import AddAddress from '../screens/addAddress/AddAddress';
-import Contact from '../screens/contact/Contact';
-import Discounted from '../screens/discounted/Discounted';
-import Faqs from '../screens/faqs/Faqs';
-import FoodReview from '../screens/foodReview/FoodReview';
-import Foods from '../screens/foods/Foods';
-import Recommendation from '../screens/recommendation/Recommendation';
-import Launch from '../screens/launch/Launch';
 
 export const GUEST_ROUTES = [
   {name: 'Launch', component: Launch},
@@ -67,16 +69,18 @@ export const AUTH_ROUTES = [
   {name: 'Foods', component: Foods},
   {name: 'Recommendation', component: Recommendation},
   {name: 'ResetPassword', component: Details},
+  {name: 'Setting', component: Setting},
+  {name: 'Payment', component: Payment},
 ];
 
 export const DRAWER_FIELDS = [
   {text: 'My Orders', image: BAG, route: 'Orders'},
   {text: 'My Profile', image: PERSON, route: 'Profile'},
   {text: 'Delivery Address', image: LOCATION, route: 'DeliveryAddress'},
-  {text: 'Payment Methods', image: CARD, route: 'Home'},
+  {text: 'Payment Methods', image: CARD, route: 'Payment'},
   {text: 'Contact Us', image: PHONE, route: 'Contact'},
   {text: 'Help & FAQ', image: FAQ, route: 'Faqs'},
-  {text: 'Settings', image: SETTING, route: 'ResetPassword'},
+  {text: 'Settings', image: SETTING, route: 'Setting'},
 ];
 
 export const TAB_FIELDS = [

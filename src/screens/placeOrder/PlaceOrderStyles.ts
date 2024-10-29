@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     width: 12,
     height: 12,
     alignSelf: 'center',
+    resizeMode: 'contain',
   },
   addressSection: {
     padding: 12,

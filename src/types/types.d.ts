@@ -88,6 +88,8 @@ export type NavigatorTypes = {
   Launch: undefined;
   Home: undefined;
   FoodReview: undefined;
+  Payment: undefined;
+  Setting: undefined;
 };
 
 export type HeaderProps = {

@@ -9,6 +9,9 @@ import {
   INSTAGRAM,
   GLOBAL,
   HEAD_PHONE,
+  BELL,
+  KEY,
+  PERSON,
 } from './Images';
 
 export const CATEGORIES = [
@@ -52,4 +55,22 @@ export const ROLES_OPTIONS = [
   {label: 'CUSTOMER', value: 'CUSTOMER'},
   {label: 'DELIVERY_PERSON', value: 'DELIVERY_PERSON'},
   {label: 'RESTAURANT_OWNER', value: 'RESTAURANT_OWNER'},
+];
+
+export const SETTING_DATA = [
+  {
+    title: 'Notification Setting',
+    content: 'Turn on/off notifications',
+    logo: BELL,
+  },
+  {
+    title: 'Password Setting',
+    content: 'Change your password',
+    logo: KEY,
+  },
+  {
+    title: 'Delete Account',
+    content: 'Delete your account',
+    logo: PERSON,
+  },
 ];
