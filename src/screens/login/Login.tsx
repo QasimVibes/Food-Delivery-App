@@ -13,7 +13,8 @@ import useTypeNavigation from '../../hooks/useTypeNavigationHook';
 
 const Login = () => {
   const navigation = useTypeNavigation();
-  const {data, handleChange, handleSubmit, user} = useLogin();
+  const {data, handleChange, handleSubmit, user, handleLoginWithGoogle} =
+    useLogin();
   const inputFields = LOGIN_FIELDS(data);
   return (
     <View style={styles.container}>
@@ -57,7 +58,7 @@ const Login = () => {
           <View style={styles.signUpContainer}>
             <Text style={styles.signUpText}>or sign up with</Text>
             <View style={styles.signUpButtonContainer}>
-              <SignupOptions />
+              <SignupOptions googleLogin={handleLoginWithGoogle} />
             </View>
             <Text style={styles.signUpText}>
               Don’t have an account?{' '}

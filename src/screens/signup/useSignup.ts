@@ -5,6 +5,7 @@ import {SignUpUserInput} from '../../types/types';
 import {validateSignUpData} from '../../utils/validation';
 import Toast from 'react-native-toast-message';
 import useTypeNavigation from '../../hooks/useTypeNavigationHook';
+import useGoogleLogin from '../../hooks/useGoogleLogin';
 
 export const useSignup = () => {
   const [data, setData] = useState<SignUpUserInput>({
@@ -15,6 +16,7 @@ export const useSignup = () => {
     dateOfBirth: '',
     role: '',
   });
+  const {signIn} = useGoogleLogin();
   const navigation = useTypeNavigation();
   const dispatch = useAppDispatch();
   const user = useAppSelector(state => state.auth);
@@ -53,10 +55,20 @@ export const useSignup = () => {
       Toast.show({type: 'error', text1: error as string});
     }
   };
+
+  const handleLoginWithGoogle = async () => {
+    try {
+      const userInfo = await signIn();
+      console.log(userInfo);
+    } catch (error) {
+      Toast.show({type: 'error', text1: error as string});
+    }
+  };
   return {
     data,
     handleChange,
     handleSubmit,
+    handleLoginWithGoogle,
     user,
   };
 };

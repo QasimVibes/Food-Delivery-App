@@ -3,10 +3,10 @@ import React from 'react';
 import {FACEBOOK, GMAIL} from '../../constants/Images';
 import styles from './SignupOptionsStyles';
 
-const SignupOptions = () => {
+const SignupOptions = ({googleLogin}: {googleLogin: () => void}) => {
   return (
     <>
-      <TouchableOpacity style={styles.imageContainer}>
+      <TouchableOpacity style={styles.imageContainer} onPress={googleLogin}>
         <Image source={GMAIL} resizeMode="contain" style={styles.imageStyle} />
       </TouchableOpacity>
       <TouchableOpacity style={styles.imageContainer}>

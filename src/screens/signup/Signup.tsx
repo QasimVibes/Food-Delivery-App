@@ -15,7 +15,8 @@ import {ROLES_OPTIONS} from '../../constants/Constants';
 
 const Signup = () => {
   const navigation = useTypeNavigation();
-  const {data, handleChange, handleSubmit, user} = useSignup();
+  const {data, handleChange, handleSubmit, handleLoginWithGoogle, user} =
+    useSignup();
   const inputFields = SIGNUP_FIELDS(data);
 
   return (
@@ -55,7 +56,7 @@ const Signup = () => {
           <View style={styles.signUpContainer}>
             <Text style={styles.signUpText}>or sign up with</Text>
             <View style={styles.signUpButtonContainer}>
-              <SignupOptions />
+              <SignupOptions googleLogin={handleLoginWithGoogle} />
             </View>
             <Text style={styles.signUpText}>
               Already have an account?{' '}
