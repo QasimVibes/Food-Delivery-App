@@ -1,5 +1,5 @@
 import {View, Text, TouchableOpacity, ScrollView} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './LoginStyles';
 import Header from '../../components/header/Header';
 import Container from '../../components/container/Container';
@@ -10,12 +10,29 @@ import {useLogin} from './useLogin';
 import {LOGIN_FIELDS} from '../../constants/InputFields';
 import Loading from '../../components/loading/Loading';
 import useTypeNavigation from '../../hooks/useTypeNavigationHook';
+import OneSignal from 'react-native-onesignal';
 
 const Login = () => {
   const navigation = useTypeNavigation();
   const {data, handleChange, handleSubmit, user, handleLoginWithGoogle} =
     useLogin();
   const inputFields = LOGIN_FIELDS(data);
+
+  useEffect(() => {
+    OneSignal.setAppId('704c77b3-4191-41cf-a741-8b74992d3b68');
+    OneSignal.promptForPushNotificationsWithUserResponse();
+    OneSignal.setNotificationOpenedHandler(notification => {
+      console.log('Notification opened:', notification);
+    });
+    OneSignal.setNotificationWillShowInForegroundHandler(
+      notificationReceivedEvent => {
+        const notification = notificationReceivedEvent.getNotification();
+        console.log('Notification received:', notification);
+        notificationReceivedEvent.complete(notification);
+      },
+    );
+  }, []);
+
   return (
     <View style={styles.container}>
       <Header title="Login" />
